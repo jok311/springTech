@@ -4,7 +4,17 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// 因为时间急，不做按需映入。。。
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
+
+
+import recursionComment from '@/views/recursionComment'
+Vue.component("recursion-comment", recursionComment)
+
 Vue.config.productionTip = false
+
 
 /* eslint-disable no-new */
 new Vue({

@@ -12,15 +12,15 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #000000;
   background: #f4f5f6;
   min-height: 100vh;
   max-width: 100vw;
   min-width: 100vw;
+  line-height: 24px;
 }
 html, body, ul, li {
   margin: 0;
@@ -32,5 +32,8 @@ ul, li {
 a {
   text-decoration: none;
   color: #000000;
+}
+a:hover {
+  color: #3879D9;
 }
 </style>
