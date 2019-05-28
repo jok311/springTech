@@ -3,15 +3,19 @@
     <!-- 递归渲染无限极回复 -->
     <div class="message-box">
       <div class="message">
-        <i class="el-icon-thumb"></i>
+        <!-- element标签打包有问题  时间有点赶，只能用img代替图标 -->
+        <span  @click="srcImg = !srcImg"><img style="width: 18px; height: 18px;vertical-align: middle;" :src="srcImg ?  colorImg: geryImg" alt=""></span>
         <span class="user-name-box" style="color: #406599;">{{ data.userName }}</span>
           &nbsp;
-        <span class="create-time-box">{{ data.createTime }}</span>
+        <span class="create-time-box">{{ data.createTime | timeAgo }}</span>
         <!-- <i :class="isShowContent ? 'el-icon-arrow-up' : 'el-icon-arrow-down'"  @click=" isShowContent = !isShowContent"></i> -->
-        <i :class="isShowContent ? 'el-icon-caret-top' : 'el-icon-caret-bottom'"  @click=" isShowContent = !isShowContent"></i>
+        <!-- <i :class="isShowContent ? 'el-icon-caret-top' : 'el-icon-caret-bottom'"  @click=" isShowContent = !isShowContent"></i> -->
+        <!-- <i :class="isShowContent ? 'el-icon-caret-top' : 'el-icon-caret-bottom'"  @click=" isShowContent = !isShowContent"></i> -->
+        
+        <span  @click=" isShowContent = !isShowContent"><img style="width: 18px; height: 18px;vertical-align: middle;" :src="isShowContent ?  caretUp: caretDown" alt=""></span>
       </div>
       <div class="showBox" v-if="isShowContent">
-        <div  class="comment-content-box" style="padding-bottom: 16px;">{{ data.content }}</div>
+        <div  class="comment-content-box" style="padding: 8px 0;">{{ data.content }}</div>
 
         <div  style="border-bottom: 1px solid #f2f2f2;padding-bottom: 16px; color: #406599;" class="reply-box">
           <div class="reply-btn" style="width: 58px;" @click="changeReplayId">回复</div>
@@ -59,6 +63,13 @@ export default {
 
       commentContent: "",
 
+      srcImg: false,
+      geryImg: require("./images/greygood.png"),
+      colorImg: require("./images/colorgood.png"),
+
+      carImg: false,
+      caretUp: require("./images/caret-up.png"),
+      caretDown: require("./images/caret-down.png"),
 
     }
   },
@@ -120,7 +131,8 @@ export default {
 
 
 .comment-reply-box
-  width 650px
+  width 32vw
+  min-width 320px
   margin 24px 0 24px 0
   border 1px solid #3f404c
   display inline-flex

@@ -16,9 +16,10 @@ const globalState = {
     CHANGECOMMENTSLIST: (state, data) => {
       state.commentsList = data;
     },
-    ADDCOMMENT: (state, data) => {
-      state.commentsList = data;
-    },
+    // ADDCOMMENT: (state, data) => {
+
+    //   state.commentsList = data;
+    // },
   },
 
   actions: {
@@ -75,7 +76,7 @@ const globalState = {
 
       window.localStorage.comments = JSON.stringify( comments ) //存新数据
 
-      let commentsList =  treeDataTranslate( comments ) //本地数据) //将评论转为树数组      
+      let commentsList =  treeDataTranslate( JSON.parse( window.localStorage.comments ) ) //本地数据) //将评论转为树数组      
 
 
       console.log(commentsList)

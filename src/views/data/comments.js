@@ -6,7 +6,7 @@ export default [
 
     userName: "torstenvl", //评论用户
     content: "Robert Sapolsky touches on this when discussing the effects of glucocorticoids on the prefrontal cortex. A stressed PFC is not an executive functioning PFC. When we're too close to an issue, we process with our periaqueductal gray (key in pain inhibition) and not with the part of our brain more adept at strategizing.These stress effects on frontal function also make us perseverative—in a rut, set in our ways, running on automatic, being habitual. We all know this—what do we typically do during a stressful time when something isn’t working? The same thing again, many more times, faster and more intensely—it becomes unimaginable that the usual isn’t working. This is precisely where the frontal cortex makes you do the harder but more correct thing—recognize that it’s time for a change. Except for a stressed frontal cortex, or one that’s been exposed to a lot of glucocorticoids. In rats, monkeys, and humans, stress weakens frontal connections with the hippocampus—essential for incorporating the new information that should prompt shifting to a new strategy—while strengthening frontal connections with more habitual brain circuits.R. Sapolsky, Behave: The Biology of Humans at Our Best and Worst 130 (2017).", //评论内容
-    createTime: 1558893927, //评论时间（时间戳）
+    createTime: 1558934464, //评论时间（时间戳）
     // comments: 5, //评论数
     // points: 90  //点赞数，投票数
   },
@@ -17,7 +17,7 @@ export default [
     
     userName: "jackMa",
     content: "When we're too close to an issue, we process with our periaqueductal gray (key in pain inhibition) and not with the part of our brain more adept at strategizing.",
-    createTime: 1558993927
+    createTime: 1558934464
   },
   {
     id: '10addfc0-5d2c-c0d0-bb47-d746c32b1553',
@@ -26,7 +26,7 @@ export default [
     
     userName: "Jay",
     content: "The Treppenwitz or l'esprit de l'escalier",
-    createTime: 1551993927
+    createTime: 1558934464
   },
 
   
@@ -37,7 +37,7 @@ export default [
     
     userName: "Kobier",
     content: "So those who opt in for parasitic payday loans are doing so under stress, can we say they opt for that loan in similar conditions like you are influenced by alcohol and therefore the contracts are invalid? Many people have ruined themselves with such contracts and it's understood that they had full awareness of what they are getting into and that's why they are liable for all the losses.",
-    createTime: 1559893927, 
+    createTime: 1558934464, 
   },
   {
     id: "7510aefb-8ac6-7631-e976-38312c5dece2",
@@ -46,7 +46,7 @@ export default [
     
     userName: "Mexi",
     content: "Your emotions can effect your actions and decisions like anything else. Are we to apply the same logic to how advertising made me feel a certain way leading to a purchase u wouldn't otherwise have made?",
-    createTime: 1559993927, 
+    createTime: 1558934464, 
   },
   
   {
@@ -56,7 +56,7 @@ export default [
     
     userName: "Jorden",
     content: "A different view is perhaps that there is a system between the individual and the rest of society - there is a line where a person is clearly not of sound mind so cannot be taken advantage of, but then there is another area where the person is of sound mind but it is not in society's interest to allow them to be taken advantage of.",
-    createTime: 1559793927, 
+    createTime: 1558934464, 
   },
   
   {
@@ -66,7 +66,7 @@ export default [
     
     userName: "joky",
     content: "That grey area not only includes preventing usury but immunisation and education and sewage plants.",
-    createTime: 1559713927, 
+    createTime: 1558934464, 
   }
 
 ]

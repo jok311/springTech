@@ -9,19 +9,23 @@
         <li v-for="(item, index) in headColumnData" :key="index"><a :href="item.href" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></li>
       </ul>
 
-      <div class="person" style="color: #fff;position: absolute; right: 12px;"><i class="el-icon-s-custom"></i> &nbsp;springTech</div>
+      <!-- <div class="person" style="color: #fff;position: absolute; right: 12px;"><i class="el-icon-s-custom"></i> &nbsp;springTech</div> -->
+      <div class="person" style="color: #fff;position: absolute; right: 12px;"><span><img style="width: 22px; height: 22px;vertical-align: middle;" src="./images/person.png" alt=""></span> &nbsp;springTech</div>
 
     </div>
+
+    <div class="head-blank" style="height: 38px;"></div>
 
     <div class="content-box">
       <!-- 新闻信息 -->
       <div class="news-title-box">
+        <i class="el-icon-thumb"></i>
         <a :href="newMessage.link" target="blank">{{ newMessage.enTitle }}</a>
         <a :href="newMessage.siteLink" target="blank">({{ newMessage.site }})</a>
       </div>
 
       <div class="news-message-box">
-        {{ newMessage.points }} points by {{ newMessage.author }} &nbsp;  {{ newMessage.createTime }}
+        {{ newMessage.points }} points by {{ newMessage.author }} &nbsp;  {{ newMessage.createTime | timeAgo }}
       </div>
 
       <!-- 输入评论 -->
@@ -124,11 +128,16 @@ $themeColor = #FF6600
   min-height 100vh
   color #222
   .head-column-box
+    position fixed
+    width 72vw
+    box-sizing border-box
+    min-width 720px
     background $themeColor
-    position relative
+    // position relative
     padding-left 16px
     display flex
     align-items center
+    z-index 2
     .logo-box
       border 1px solid #fff
       img
@@ -146,6 +155,7 @@ $themeColor = #FF6600
       text-align left
     .comment-reply-box
       width 32vw
+      min-width 320px
       margin 24px 0 24px 0
       border 1px solid #3f404c
       display inline-flex
