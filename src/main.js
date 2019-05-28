@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 
 // 因为时间急，不做按需映入。。。
 import ElementUI from 'element-ui';
@@ -15,11 +16,14 @@ Vue.component("recursion-comment", recursionComment)
 
 Vue.config.productionTip = false
 
+store.dispatch('initCommentsList')
+
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

@@ -18,8 +18,8 @@ export default {
   color: #000000;
   background: #f4f5f6;
   min-height: 100vh;
-  max-width: 100vw;
-  min-width: 100vw;
+  /* max-width: 100vw;
+  min-width: 100vw; */
   line-height: 24px;
 }
 html, body, ul, li {

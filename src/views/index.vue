@@ -8,6 +8,9 @@
       <ul>
         <li v-for="(item, index) in headColumnData" :key="index"><a :href="item.href" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></li>
       </ul>
+
+      <div class="person" style="color: #fff;position: absolute; right: 12px;"><i class="el-icon-s-custom"></i> &nbsp;springTech</div>
+
     </div>
 
     <div class="content-box">
@@ -30,14 +33,13 @@
           v-model="commentContent"
           show-word-limit
           @focus="inputFocus"
-          @blur="inputBlur"
           
         >
         </el-input>
 
         <!-- 评论按钮，不输入时，rows变小，不占空间，参考今日头条PC -->
-        <div class="comment-btn-box" v-show="textearaRowS == 2">评论</div>
-        <div class="comment-btn-bottom-box" v-show="textearaRowS == 8"><div class="btn">评论</div></div>
+        <div class="comment-btn-box" v-show="textearaRowS == 2" @click="inputFocus">评论</div>
+        <div class="comment-btn-bottom-box" v-show="textearaRowS == 8"><div class="btn" @click="addComment">评论</div></div>
       </div>
 
       <div style="background: #f2f2f2;height: 1px;"></div>
@@ -50,6 +52,7 @@
 </template>
 
 <script>
+
 
 import news from './data/news.js'
 
@@ -81,7 +84,28 @@ export default {
     },
     inputBlur() {
       this.textearaRowS = 2
+    },
+
+    addComment() {
+      if( this.commentContent ) {
+        let data = {
+          content: this.commentContent,
+          parentId: null
+        }
+        this.$store.dispatch("addComment", data).then( res => {
+          this.commentContent = ''
+          this.inputBlur()
+        })
+
+      }else{
+        this.$message({
+          message: '评论内容不能为空',
+          type: 'warning'
+        });        
+      }
+
     }
+
   },
 }
 </script>
@@ -93,7 +117,7 @@ export default {
 $themeColor = #FF6600
 
 .index-box
-  max-width 78vw
+  max-width 72vw
   min-width 720px
   margin 0 auto
   background #fff
@@ -121,7 +145,7 @@ $themeColor = #FF6600
     .news-title-box
       text-align left
     .comment-reply-box
-      width 650px
+      width 32vw
       margin 24px 0 24px 0
       border 1px solid #3f404c
       display inline-flex

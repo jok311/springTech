@@ -8,22 +8,19 @@
 
 <script>
 
-import { treeDataTranslate } from '@/utils/treeDataTranslate'
-import comments from '@/views/data/comments.js'
 import recursionComment from './recursionComment'
-
-let commentsList =  treeDataTranslate(comments) //将评论转为树数组
-
-console.log(commentsList)
-
+import { mapGetters } from 'vuex'
 
 export default {
-  data() {
-    return {
-      commentsList, 
-    }
+  computed: {
+    ...mapGetters(['commentsList']) //公共状态数据
+  },    
+  
+  created() {
   },
-  // components: { recursionComment },
+  methods: {
+
+  },
 }
 </script>
 
